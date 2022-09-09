@@ -3,19 +3,23 @@ import LoginForm from './components/LoginForm';
 import "./App.css";
 
 function App() {
-  /*
+  
   const adminUser  = {
+    name: "Admin143",
     email: "wellingtoncharlottenaaodarley@gmail.com",
     password: "admin12341234"
   }
    
   const doctor = {
-    username: "newdoc",
+   
+    name: "newdoc",
+    email: "",
     password: "doc12341234"
   }
 
   const nurse = {
-    username: "newnurse",
+    name: "newnurse",
+    email: "",
     password: "nurse12341234"
   }
 
@@ -23,9 +27,10 @@ function App() {
 
   const Patient = {
     username: "newuser",
+    email: "",
     password: "patient12341234"
   }
-  */
+ 
 
   const [user, setUser] = useState({name: "", email: ""});
   const [error, setError]= useState("");
