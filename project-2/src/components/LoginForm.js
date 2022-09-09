@@ -1,4 +1,5 @@
 import React from 'react'
+import doctors-removebg-preview.png from '../public/doctors-removebg-preview';
 
 function LoginForm() {
     return (
