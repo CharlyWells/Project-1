@@ -18,11 +18,11 @@ function LoginForm({ Login, error}) {
             </div>
             <div className='form-group'>
                 <label htmlFor='email'>Email: </label>
-                <input type="email" name="email" id="email"/>
+                <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
             </div>
             <div className='form-group'>
                 <label htmlFor='password'>Password: </label>
-                <input type="password" name="password" id="password"/>
+                <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
             </div>
             <div>
               <input type="submit" value="LOGIN"/>
