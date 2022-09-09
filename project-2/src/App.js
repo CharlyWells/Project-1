@@ -37,6 +37,11 @@ function App() {
 
   const Login = details => {
       console.log(details);
+
+      if(details.email == adminUser.email && details.password==adminUser.password){
+      console.log("Logged in");
+  } else{
+    console.log("Details do not match!");
   }
 
   const Logout = () => {
@@ -51,10 +56,11 @@ function App() {
             <button>Logout</button>
           </div>
         ): (
-          <LoginForm />
+          <LoginForm Login={Login} error={error}/>
         )}
     </div>
   )
+}
 }
 
 export default App;
