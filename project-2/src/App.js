@@ -3,7 +3,7 @@ import LoginForm from './components/LoginForm';
 
 function App() {
   return (
-    <div style= {{backgroundColor:"#white " ,    }}>
+    <div style= {{backgroundColor:"#white"}}>
     <LoginForm />
     </div>
   )

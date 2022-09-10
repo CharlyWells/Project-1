@@ -8,13 +8,22 @@ import './LoginForm.css'
 function LoginForm() {
     return (
         <form>
-            <body></body>
-
 
             
+
+
+
         <section className='section-1'>
         <img src={Logo}  alt=""  className="img-2"/>
         <figcaption class='group-1'> DPMG1</figcaption> 
+
+
+        <section class='section-2'>
+        <img src={Me}  alt=""  class="i-img"/>
+            <p class='paragraph-1'>Seamlessly making your hospital processes easy whiles saving cost and optimizing productivity</p>
+        </section>
+        
+
         <h2 class="sign-1">Sign-In</h2>
         <p>Access the DPMG1 panel using your username and passcode</p>
         </section>
@@ -31,13 +40,10 @@ function LoginForm() {
     
        <div class='form-group-1'>
         <br/>
-       <input type="submit"  value="Submit"/>
+       <input type="submit"  value="Sign In"/>
        </div>
 
-        <section class='section-2'>
-        <img src={Me}  alt=""  class="i-img"/>
-            <p class='paragraph-1'>Seamlessly making your hospital processes easy whiles saving cost and optimizing productivity</p>
-        </section>
+       
 
         <footer id="about">
        <p>Posted by:Wellington Charlotte</p>
