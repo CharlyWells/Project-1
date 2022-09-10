@@ -2,13 +2,16 @@ import React from 'react'
 import Me from  "../images/Me.png"
 import Logo  from "../images/Logo.png"
 import './LoginForm.css'
-import He from  "../images/He.jpg"
+
 
 
 function LoginForm() {
     return (
         <form>
             <body></body>
+
+
+            
         <section className='section-1'>
         <img src={Logo}  alt=""  className="img-2"/>
         <figcaption class='group-1'> DPMG1</figcaption> 
