@@ -19,12 +19,10 @@ h2{
     
 }
 
-.paragraph-1{
-    animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.section-2 :hover {
+  transform: scaleX(-1);
 }
+
 
 input {
     width: 38%;
