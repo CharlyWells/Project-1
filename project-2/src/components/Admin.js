@@ -11,30 +11,32 @@ function Admin() {
         <figcaption class='group-1'> DPMG1</figcaption>
       
     
-        <div class='row'>
-        <div class='day square'><h3>Total Clients</h3></div>
-        
-      </div>
-      
-        <section class='day square'>
-            <h3>New Registration</h3>
-        </section>
-
-        
+      <section></section>
       <div class='row'>
-        <div class='day square'><h3>Appointments History</h3></div>
+        <div class='day square'><h3>Total Clients</h3></div>
+        <div class='task square'></div>
         
       </div>
       <div class='row secondary-background'>
-        <div class='day square'><h3>Physician Visit</h3></div>
-        
+        <div class='day 1'><h3>New Registration</h3></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
       </div>
       <div class='row'>
-        <div class='day square'><h3>View Patients Seen Today</h3></div>
-       
+        <div class='day 2'><h3>Appointments History</h3></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
+      </div>
+      <div class='row secondary-background'>
+        <div class='day 3'><h3>Physician Visit</h3></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
+        <div class='task square'></div>
       </div>
       </div>
-      
+    
 
 
 
