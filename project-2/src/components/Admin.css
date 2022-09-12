@@ -56,11 +56,24 @@
     color:white;
     background-color:#dc3545;;
     text-align: center;
-    width: 50%;
+    width: 30%;
     border-radius: 50px !important;
   }
   
   
+  .row .secondary-background{
+        
+    border: 1px solid white;
+    color:white;
+    background-color:#fd7e14;
+    text-align: center;
+    width: 30%;
+    border-radius: 50px !important;
+    padding: 10px;
+    justify-content:center;
+    background-color:#fd7e14;
+  }
+
   
   .task p {
     font-family: 'Quicksand', sans-serif;
@@ -85,4 +98,16 @@
   /* Footer */
   footer {
     font-size: 24px;
+  }
+
+  .day1{
+    border: 1px solid white;
+    color:white;
+    background-color:#fd7e14;
+    text-align: center;
+    width: 30%;
+    border-radius: 50px !important;
+    padding: 10px;
+    justify-content:center;
+
   }
