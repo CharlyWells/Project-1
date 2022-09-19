@@ -3,6 +3,7 @@ import LoginForm from './components/LoginForm';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Admin from './components/Admin';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
 
@@ -22,16 +23,20 @@ const App = () => {
 
     <LoginForm />
     <Admin/>
-    <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar}/>
-    
-    
-       
+
     <div class="container">
         <h1>React Dashboard</h1>
     </div>
     
+    
+    <Navbar sidebarOpen={sidebarOpen} openSidebar={closeSidebar}/>
+    
+    
+       
+    
       
     </div>
+    <Sidebar sidebarOpen={sidebarOpen} closeSidebar={openSidebar}/>
     </Router>
   )
 }
