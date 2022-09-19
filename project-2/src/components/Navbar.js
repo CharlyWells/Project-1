@@ -1,6 +1,5 @@
 import "./Navbar.css";
-import avatar from "./components/avatar.png";
-
+import avatar  from "../images/avatar.png"
 
 const Navbar = ({ sidebarOpen, openSidebar })  => {
     return(
