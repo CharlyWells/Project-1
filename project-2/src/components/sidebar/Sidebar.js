@@ -1,5 +1,5 @@
 import "./Sidebar.css";
-import Logo  from "../images/Logo.png";
+import Logo  from "../../assets/Logo.png";
 
 
 const Sidebar = ({sidebarOpen, closeSidebar}) => {

@@ -2,8 +2,8 @@ import {useState} from 'react'
 import LoginForm from './components/LoginForm';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Admin from './components/Admin';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import Navbar from './components/navbar/Navbar';
+import Sidebar from './components/sidebar/Sidebar';
 
 const App = () => {
 
@@ -25,20 +25,22 @@ const App = () => {
     <Admin/>
 
     <div class="container">
+        <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar}/>
+        <Sidebar sidebarOpen={sidebarOpen} closeSidebar={openSidebar}/>
+    
         <h1>React Dashboard</h1>
     </div>
     
     
-    <Navbar sidebarOpen={sidebarOpen} openSidebar={closeSidebar}/>
     
     
        
     
       
     </div>
-    <Sidebar sidebarOpen={sidebarOpen} closeSidebar={openSidebar}/>
+    
     </Router>
   )
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?familyLato:wgh');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 ::-webkit-scrollbar{
      width: 5px;
@@ -20,7 +20,13 @@
 
 /*general styling*/
 *{
-    font-family: "Lato", sans-serif;
+padding: 0;
+margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Lato, sans-serif";
 }
 
 .text-primary-p{
@@ -57,4 +63,19 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 0.8fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+    "sidebar nav nav nav"
+    "sidebar main main main";
 }
+
+@media only screen and (max-width: 978px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas:
+            "nav"
+            "main";
+    }
+}
+
