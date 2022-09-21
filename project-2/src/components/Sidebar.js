@@ -8,7 +8,7 @@ const Sidebar = ({sidebarOpen, closeSidebar}) => {
         <div className="sidebar__title">
             <div className="sidebar__img">
                 <img src={Logo} alt= "logo"/>
-                <h1>Codersbite</h1>
+                <h1>DPMG1</h1>
             </div>
 
             <i className="fa fa-times"
@@ -57,6 +57,23 @@ const Sidebar = ({sidebarOpen, closeSidebar}) => {
                 <a href="#">Special Days</a>
             </div>
         </div>
+        <div className="sidebar__link">
+                <i className="fa fa-files-o"></i>
+                <a href="#">Apply for leave</a>
+            </div>
+            <h2>PAYROLL</h2>
+            <div className="sidebar__link">
+                <i className="fa fa-money"></i>
+                <a href="#">Payroll</a>
+            </div>
+            <div className="sidebar__link">
+                <i className="fa fa-briefcase"></i>
+                <a href="#">Paygrade</a>
+            </div>
+            <div className="sidebar__logout">
+                <i className="fa fa-power-off"></i>
+                <a href="#">Log out</a>
+            </div>
      </div>
     )
 }
