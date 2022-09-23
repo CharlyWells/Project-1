@@ -101,6 +101,9 @@ const LoginForm =() => {
                required
                 />
                 <br/>
+                <br/>
+                <br/>
+                <br/>
           <label htmlFor='password'>Password</label>
           <input 
               type="password" 
@@ -110,8 +113,10 @@ const LoginForm =() => {
                required
                 />
                 <br/>
+                <br/>
+                <br/>
 
-          <button>Sign In</button>
+          <button class="sign-in">Sign In</button>
         </form>
 
         <p>
