@@ -87,4 +87,7 @@ input {
   
   
   }
-  
+  .images{
+     float: right;
+     float: top;
+  }

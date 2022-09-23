@@ -73,6 +73,8 @@ const LoginForm =() => {
                 </p>
             </section>
          )  : (
+
+
         
         
         <section className='section-1'>
@@ -81,6 +83,12 @@ const LoginForm =() => {
         <figcaption class='group-1'> DPMG1</figcaption> 
         <h1>Sign In</h1>
 
+         <section class="images">
+            <div class="images-1">
+        <img src={Me}  alt=""  class="img-22"/>
+        </div>
+        </section>
+       
         <form onSubmit={handleSubmit}>
           <label htmlFor='username'>Username:</label>
           <input 
@@ -114,7 +122,11 @@ const LoginForm =() => {
 
             </span>
         </p>
+
+       
         </section>
+
+        
        )}
        
        </>
