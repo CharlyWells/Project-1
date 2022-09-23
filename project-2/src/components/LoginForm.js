@@ -1,61 +1,123 @@
-import React from 'react'
-import Me from  "../images/Me.png"
-import Logo  from "../images/Logo.png"
-import './LoginForm.css'
+import React from 'react';
+import {useRef,useState,useEffect, useContext} from 'react';
+import Me from  "../images/Me.png";
+import Logo  from "../images/Logo.png";
+import './LoginForm.css';
+import AuthContext from './context/AuthProvider';
+import axios from '../api/axios';
+const LOGIN_URL = '/auth';
 
 
 
-function LoginForm() {
+const LoginForm =() => {
+     const {setAuth}= useContext(AuthContext)
+    const userRef = useRef();
+    const errRef = useRef();
+
+    const[user, setUser] = useState('');
+    const[pwd, setPwd] = useState('');
+    const[errMsg,setErrMsg]=useState ('');
+    const[success, setsuccess] = useState(false);
+
+    useEffect (() => {
+        userRef.current.focus();
+    },[])
+
+    useEffect (() => {
+        setErrMsg('');
+    },[user,pwd])
+
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+
+
+        try {
+            const response = await axios.post(LOGIN_URL,
+                JSON.stringify({ user, pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response?.data));
+            //console.log(JSON.stringify(response));
+            const accessToken = response?.data?.accessToken;
+            const roles = response?.data?.roles;
+            setAuth({ user, pwd, roles, accessToken });
+            setUser('');
+            setPwd('');
+            setsuccess(true);
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or Password');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
+        }
+    }
+
     return (
-        <form>
-
-            
+   
+        <>
+         {success ? (
+            <section>
+                <h1>You are logged in!</h1>
+                <br/>
+                <p>
+                    <a href="#">Go to Home</a>
+                </p>
+            </section>
+         )  : (
         
-
+        
         <section className='section-1'>
+            <p ref={errRef}  className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
         <img src={Logo}  alt=""  className="img-2"/>
         <figcaption class='group-1'> DPMG1</figcaption> 
+        <h1>Sign In</h1>
 
+        <form onSubmit={handleSubmit}>
+          <label htmlFor='username'>Username:</label>
+          <input 
+               type="text" 
+               id="username"
+               ref={userRef}
+               autoComplete="off"
+               onChange={(e) => setUser(e.target.value)}
+               value={user}
+               required
+                />
+                <br/>
+          <label htmlFor='password'>Password</label>
+          <input 
+              type="password" 
+               id="password"
+               onChange={(e) => setPwd(e.target.value)}
+               value={pwd}
+               required
+                />
+                <br/>
 
-        <section class='section-2'>
-        <img src={Me}  alt=""  class="i-img"/>
-            <p class='paragraph-1'>Seamlessly making your hospital processes easy whiles saving cost and optimizing productivity</p>
-        </section>
-
-        
-
-        <h2 class="sign-1">Sign-In</h2>
-        <p class="access-1">Access the DPMG1 panel using your username and passcode</p>
-        </section>
-
-        <div class='form-group'>
-               <label for='name'>Username</label><br/>
-               <input type="text" name="name" id="name" required/>
-        </div>
-
-
-        <div class='form-group'>
-            <label for='password'>Passcode </label><br/>
-            <input type="password" name="password" id="password" required/>
-        </div>
-    
-       <div class='form-group-1'>
-        <br/>
-       <input type="submit"  value="Submit"/>
-       </div>
-
-       
-
-        <footer id="about">
-       <p>Posted by:Wellington Charlotte</p>
-       <div class="copyright">
-          &copy; 2022 Wellington Charlotte. All Rights Reserved
-        </div>
-     </footer>
-            
-
+          <button>Sign In</button>
         </form>
+
+        <p>
+            Need an Account? <br/>
+            <span className='line'>
+                {/*put router link here*/}
+                <a href="#">Sign up</a>
+
+            </span>
+        </p>
+        </section>
+       )}
        
+       </>
      
     )
 }
